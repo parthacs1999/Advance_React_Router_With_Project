@@ -46,11 +46,15 @@ import EditEvent from './pages/EditEvent';
 import Root from './pages/Root';
 import EventRoot from './pages/EventRoot';
 import EventsPage,{loader as eventsLoader} from './pages/Events';
+import Error from './pages/Error';
 //creating routes
 const router=createBrowserRouter([
-  {path:'/',element:<Root/>,children:[
+  {path:'/',element:<Root/>,
+    errorElement:<Error/>,
+    children:[
     { index:true, element: <Home /> },
-    {path:'events',element:<EventRoot/>,children:[
+    {path:'events',element:<EventRoot/>,
+    children:[
       { index:true, element: <EventsPage />,loader:eventsLoader},
       { path: ':eventId', element: <EventDetail /> },
       { path: 'new', element: <NewEvent /> },
