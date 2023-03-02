@@ -20,5 +20,5 @@ app.use((error, req, res, next) => {
   const message = error.message || 'Something went wrong.';
   res.status(status).json({ message: message });
 });
-
+console.log('node is running on port:8080');
 app.listen(8080);
